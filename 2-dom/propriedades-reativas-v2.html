@@ -2,8 +2,9 @@
 
 <div id="app">
     <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="contador2++">Aumentar 2</button>
     <button v-on:click="diminuir">Diminuir</button>
-    <p>Contador: {{ contador }}</p>
+    <p>Contador: {{ contador }} | {{ contador2 }}</p>
     <p>Resultado: {{ resultado }}</p>
 </div>
 
@@ -11,7 +12,8 @@
     new Vue({
         el: '#app',
         data: {
-            contador: 0
+            contador: 0,
+            contador2: 0
         },
         computed: {
             resultado() {
