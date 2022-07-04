@@ -1,4 +1,4 @@
-<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <style>
     #app {
         display: flex;
@@ -12,16 +12,30 @@
     .c1 {
         background-color: red;
     }
+    .c2 {
+        background-color: green;
+    }
+    .c3 {
+        background-color: blue;
+    }
 </style>
 
 <div id="app">
-    <div class="demo"></div>
-    <div class="demo"></div>
+    <div class="demo" :class="{c1: aplicarC1}" @click="aplicarC1 = !aplicarC1">{{aplicarC1}}</div>
+    <div class="demo" @click="aplicandoC1"></div>
     <div class="demo"></div>
 </div>
 
 <script>
     new Vue({
-        el: '#app'
+        el: '#app',
+        data: { 
+            aplicarC1: false
+        },
+        methods: {
+            aplicandoC1(){
+                return this.aplicarC1 = !this.aplicarC1
+            }
+        }
     })
 </script>
